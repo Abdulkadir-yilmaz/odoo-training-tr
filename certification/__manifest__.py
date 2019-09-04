@@ -13,7 +13,8 @@
             'views/certification_bodies.xml',
             'views/identity_view.xml',
             'views/res_partner_view.xml',
-            'views/standard_view.xml'
+            'views/standard_view.xml',
+            'reports/certification_report.xml'
              ],
     'development_satus' : 'Beta',
     'maintainers' : ['abdulkadir-yilmaz'],
