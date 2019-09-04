@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="identity_view_list" model="ir.ui.view">
+        <field name="name">Identification</field>
+        <field name="model">hr.employee</field>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <tree string="Identification">
+                <field name="name"/>
+                <field name="passport_id"/>
+                <field name="identification_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="identity_form" model="ir.ui.view">
+        <field name="name">Identification</field>
+        <field name="model">hr.employee</field>
+        <field name="priority" eval="100"/>
+        <field name="arch" type="xml">
+            <form string="Identification">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="passport_id"/>
+                        <field name="identification_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="identification" model="ir.actions.act_window">
+        <field name="name">Identification</field>
+        <field name="res_model">hr.employee</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_identification_tree" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="identity_view_list"/>
+        <field name="act_window_id" ref="identification"/>
+    </record>
+
+    <record id="action_identification_form" model="ir.actions.act_window.view">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="identity_form"/>
+        <field name="act_window_id" ref="identification"/>
+    </record>
+
+    <menuitem
+            id="identification_menu"
+            parent="certification_menu"
+            sequence="5"
+            action="identification"/>
+</odoo>
